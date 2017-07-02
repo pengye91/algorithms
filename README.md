@@ -1,3 +1,3 @@
 # algorithms
 
-A library including normal data structs and algorithms.
+A library including normal data structures and algorithms.
