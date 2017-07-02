@@ -3,38 +3,40 @@
 
 
 class Stack():
-    inner_list = []
-    numbers = 0
+    __inner_list__ = []
+    __numbers__ = 0
+
     def __init__(self):
-        self.inner_list = []
-        self.numbers = 0
-    
+        self.__inner_list__ = []
+        self.__numbers__ = 0
+
     def push(self, item):
-        self.inner_list.append(item)
-        self.numbers = self.numbers + 1
-    
+        self.__inner_list__.append(item)
+        self.__numbers__ = self.__numbers__ + 1
+
     def pop(self):
         try:
-            self.numbers -= 1
-            return self.inner_list.pop()
+            self.__numbers__ -= 1
+            return self.__inner_list__.pop()
         except IndexError as e:
             raise e
-    
+
     def is_empty(self):
-        return self.numbers == 0
-    
+        return self.__numbers__ == 0
+
     def peek(self):
-        return self.inner_list[self.numbers - 1]
-    
+        return self.__inner_list__[self.__numbers__ - 1]
+
     def __next__(self):
-        if self.numbers == 0:
+        if self.__numbers__ == 0:
             raise StopIteration
-        self.numbers -= 1
-        return self.inner_list[self.numbers]
+        self.__numbers__ -= 1
+        return self.__inner_list__[self.__numbers__]
 
     def __iter__(self):
+        self.__numbers__ = len(self.__inner_list__)
         return self
-    
+
     def __repr__(self):
-        return str(self.inner_list)
-        
+        return str(self.__inner_list__)
+
