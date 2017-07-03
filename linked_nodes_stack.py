@@ -1,27 +1,29 @@
 
 class LinkedNodes():
+
+    __first__ = None
+    __numbers__ = 0
+
     class Node():
         item = None
         nxt = None
+
         def __init__(self):
             self.item = None
             self.nxt = None
-        
+
         def __repr__(self):
             return str(self.item)
-    
-    __first__ = None
-    __numbers__ = 0
-    
+
     def __init__(self):
         self.__first__ = self.Node()
-    
+
     def push(self, item):
         self.__numbers__ += 1
         __old_first__ = self.__first__
         self.__first__ = self.Node()
         self.__first__.item, self.__first__.nxt = item, __old_first__
-    
+
     def pop(self):
         self.__numbers__ -= 1
         __ret__ = self.__first__.item
