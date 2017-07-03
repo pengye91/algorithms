@@ -36,6 +36,9 @@ class LinkedNodes():
     def size(self):
         return self.__numbers__
 
+    def __iter__(self):
+        return iter(self.pop, None)
+
     def __repr__(self):
         __temp__ = self.__first__
         __representation__ = str(__temp__.item)

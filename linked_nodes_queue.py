@@ -34,12 +34,15 @@ class LinkedNodesQueue():
     
     def dequeue(self):
         if self.is_empty():
-            raise IndexError("empty queue")
+            return
         
         self.__numbers__ -= 1
         __ret__ = self.__first__.item
         self.__first__ = self.__first__.nxt
         return __ret__
+
+    def __iter__(self):
+        return iter(self.dequeue, None)
 
     def __repr__(self):
         __temp__ = self.__first__
